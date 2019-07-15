@@ -11,7 +11,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME ="dictionary.db";
-    public static final String DBLOCATION ="/data/data/com.javahelps.com.javahelps.androiddictionarywithsqlite/database";
+    //public static final String DBLOCATION ="/data/data/com.javahelps.com.javahelps.androiddictionarywithsqlite/database";
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -35,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         {
             return;
         }
-        mDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE);
+        mDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
     }
     public void closeDatabase() {
         if(mDatabase!=null) {
